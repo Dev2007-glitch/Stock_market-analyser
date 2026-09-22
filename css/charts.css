@@ -1,0 +1,203 @@
+/* ==========================================================================
+   STOCKLAB - Friendly Light Chart Engine & Trend Overlays CSS
+   ========================================================================== */
+
+.chart-module {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.chart-toolbar {
+  padding: 10px 14px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  user-select: none;
+}
+
+.chart-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chart-btn-group {
+  display: flex;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.chart-pill {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.chart-pill:hover {
+  color: var(--text-primary);
+}
+
+.chart-pill.active {
+  background: #ffffff;
+  color: var(--accent-blue);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.chart-pill-indicator {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: var(--transition-fast);
+}
+
+.chart-pill-indicator.active {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.chart-pill-indicator[data-ind="sma20"].active { border-color: #0284c7; color: #0284c7; }
+.chart-pill-indicator[data-ind="sma50"].active { border-color: #d97706; color: #d97706; }
+.chart-pill-indicator[data-ind="sma200"].active { border-color: #7c3aed; color: #7c3aed; }
+.chart-pill-indicator[data-ind="ema20"].active { border-color: #db2777; color: #db2777; }
+.chart-pill-indicator[data-ind="rsi"].active { border-color: #059669; color: #059669; }
+.chart-pill-indicator[data-ind="macd"].active { border-color: #4f46e5; color: #4f46e5; }
+.chart-pill-indicator[data-ind="trend"].active { border-color: #2563eb; color: #2563eb; }
+
+/* Chart Canvas Viewport */
+.chart-viewport {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background: #ffffff;
+  cursor: crosshair;
+}
+
+.chart-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Floating Hover Tooltip & Crosshair Info */
+.chart-inspect-bar {
+  padding: 8px 14px;
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.inspect-metric {
+  display: flex;
+  gap: 4px;
+}
+
+.inspect-label {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.inspect-val {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Beginner Chart Tutorial Banner / Overlay */
+.chart-tutorial-banner {
+  background: rgba(37, 99, 235, 0.05);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.15);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.tutorial-step-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tutorial-step-badge {
+  background: var(--accent-blue);
+  color: #ffffff;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+/* Dedicated Trend Analysis Visual Component */
+.trend-gauge-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+}
+
+.trend-badge-pill {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trend-bullish {
+  background: var(--gain-green-bg);
+  border: 1px solid var(--gain-green-border);
+  color: var(--gain-green);
+}
+
+.trend-bearish {
+  background: var(--loss-red-bg);
+  border: 1px solid var(--loss-red-border);
+  color: var(--loss-red);
+}
+
+.trend-neutral {
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  color: var(--accent-blue);
+}

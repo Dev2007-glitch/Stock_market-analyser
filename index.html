@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STOCKLAB - Friendly stock-market learning terminal, candle analysis simulator, and wick prediction workstation.">
+  <title>STOCKLAB | Candle Simulator & Next Wick Prediction</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/charts.css">
+  <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="beginner-mode">
+  <div id="app">
+    
+    <!-- Top Navigation Bar & Horizontal Core Platform Navigation -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <!-- Brand Logo -->
+        <div class="brand-badge" onclick="AppState.set('activeView', 'simulator');">
+          <div class="brand-logo-icon">SL</div>
+          <span class="brand-title">STOCKLAB</span>
+        </div>
+
+        <!-- HORIZONTAL CORE PLATFORM NAVIGATION TABS -->
+        <nav class="horizontal-nav-bar">
+          <button class="h-nav-item active" data-view="simulator">
+            <span>🕯️ Candle Simulator & Slots</span>
+          </button>
+          <button class="h-nav-item" data-view="analyze">
+            <span>🔬 Stock Analysis & Trends</span>
+          </button>
+          <button class="h-nav-item" data-view="paper">
+            <span>📈 Paper Trading</span>
+          </button>
+          <button class="h-nav-item" data-view="learn">
+            <span>🎓 Learn Academy</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Quick Search -->
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <span style="font-size: 11px;">🔍</span>
+            <input type="text" id="global-search-input" class="search-input" placeholder="Search ticker (AAPL, NVDA, TSLA)..." autocomplete="off">
+          </div>
+          <div id="search-results-dropdown" class="search-results-dropdown"></div>
+        </div>
+
+        <!-- Live Status Pill -->
+        <div class="data-source-badge">
+          ● REAL-TIME FEEDS
+        </div>
+      </div>
+    </header>
+
+    <!-- Full-Width Workspace Container -->
+    <main class="workspace">
+      <section class="main-view-container" id="main-view-container">
+        <div id="view-simulator" class="view-panel active"></div>
+        <div id="view-analyze" class="view-panel"></div>
+        <div id="view-paper" class="view-panel"></div>
+        <div id="view-learn" class="view-panel"></div>
+        <div id="view-landing" class="view-panel"></div>
+        <div id="view-dashboard" class="view-panel"></div>
+        <div id="view-markets" class="view-panel"></div>
+        <div id="view-watchlist" class="view-panel"></div>
+        <div id="view-compare" class="view-panel"></div>
+        <div id="view-portfolio" class="view-panel"></div>
+        <div id="view-journal" class="view-panel"></div>
+        <div id="view-screener" class="view-panel"></div>
+        <div id="view-slot-trading" class="view-panel"></div>
+        <div id="view-news" class="view-panel"></div>
+        <div id="view-risk" class="view-panel"></div>
+        <div id="view-settings" class="view-panel"></div>
+      </section>
+    </main>
+
+    <!-- Global Modal Dialog Container -->
+    <div class="modal-overlay" id="global-modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <span class="modal-title" id="modal-title">MODAL TITLE</span>
+          <button class="modal-close" onclick="UIController.closeModal()">✕</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-footer" id="modal-footer"></div>
+      </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+  </div>
+
+  <!-- JavaScript Modules in Dependency Order -->
+  <script src="js/storage.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/demoData.js"></script>
+  <script src="js/indicators.js"></script>
+  <script src="js/trendAnalysis.js"></script>
+  <script src="js/calculations.js"></script>
+  <script src="js/dataProvider.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/learning.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/paperTrading.js"></script>
+  <script src="js/journal.js"></script>
+  <script src="js/screener.js"></script>
+  <script src="js/candleSimulator.js"></script>
+  <script src="js/slotTrading.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/commandParser.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

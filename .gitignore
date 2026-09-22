@@ -1,0 +1,13 @@
+# OS files
+Thumbs.db
+.DS_Store
+
+# Temporary & Log files
+*.log
+scratch/
+.system_generated/
+
+# Node modules
+node_modules/
+dist/
+.env

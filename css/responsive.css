@@ -1,0 +1,147 @@
+/* ==========================================================================
+   STOCKLAB - Responsive Layout & Breakpoints CSS
+   ========================================================================== */
+
+/* Tablet & Moderate Screens (<= 1200px) */
+@media (max-width: 1200px) {
+  :root {
+    --sidebar-width: 180px;
+    --context-width: 280px;
+  }
+
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet Portrait & Small Laptops (<= 992px) */
+@media (max-width: 992px) {
+  .workspace {
+    grid-template-columns: var(--sidebar-width) 1fr;
+  }
+
+  .context-drawer {
+    position: fixed;
+    top: var(--topbar-height);
+    right: -100%;
+    bottom: var(--terminal-height);
+    width: 320px;
+    z-index: 150;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+    transition: right var(--transition-normal);
+  }
+
+  .context-drawer.open {
+    right: 0;
+  }
+
+  .search-container {
+    width: 240px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --topbar-height: 48px;
+    --terminal-height: 140px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+    height: calc(100vh - var(--topbar-height) - 56px); /* 56px mobile nav */
+  }
+
+  .workspace.terminal-collapsed {
+    height: calc(100vh - var(--topbar-height) - 56px);
+  }
+
+  .sidebar {
+    position: fixed;
+    top: var(--topbar-height);
+    left: -100%;
+    bottom: 56px;
+    width: 240px;
+    z-index: 250;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+    transition: left var(--transition-normal);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .topbar-center {
+    display: none;
+  }
+
+  .search-container {
+    width: 160px;
+  }
+
+  .market-clock, .market-status-pill {
+    display: none;
+  }
+
+  .grid-2, .grid-3, .grid-4, .grid-5 {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-viewport {
+    height: 280px;
+  }
+
+  /* Mobile Bottom Navigation Bar */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    z-index: 300;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: var(--text-muted);
+    font-size: 10px;
+    cursor: pointer;
+    flex: 1;
+    height: 100%;
+  }
+
+  .mobile-nav-item.active {
+    color: var(--accent-cyan);
+  }
+
+  .mobile-nav-icon {
+    font-size: 16px;
+  }
+
+  .terminal-drawer {
+    display: none; /* Accessible via command modal on mobile */
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+}

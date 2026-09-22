@@ -1,0 +1,236 @@
+/* ==========================================================================
+   STOCKLAB - Friendly Light Terminal & CLI Console Styling
+   ========================================================================== */
+
+.terminal-drawer {
+  display: none !important;
+}
+
+.terminal-drawer.collapsed {
+  height: 36px;
+}
+
+.terminal-header {
+  height: 36px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-prompt-symbol {
+  color: var(--gain-green);
+}
+
+.terminal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-shortcut-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1px solid var(--border-muted);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+
+.terminal-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  transition: var(--transition-fast);
+}
+
+.terminal-btn:hover {
+  background: #ffffff;
+  color: var(--accent-blue);
+}
+
+/* Terminal Body / Output Stream */
+.terminal-body {
+  flex: 1;
+  background: #f8fafc;
+  padding: 10px 14px;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  user-select: text;
+}
+
+.terminal-log-row {
+  display: flex;
+  gap: 8px;
+  word-break: break-all;
+}
+
+.terminal-log-time {
+  color: var(--text-dim);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.terminal-log-type {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.terminal-log-type.cmd { color: var(--accent-blue); }
+.terminal-log-type.info { color: #0284c7; }
+.terminal-log-type.success { color: var(--gain-green); }
+.terminal-log-type.warn { color: var(--accent-amber); }
+.terminal-log-type.error { color: var(--loss-red); }
+
+.terminal-log-msg {
+  color: var(--text-primary);
+}
+
+/* Terminal Input Bar */
+.terminal-input-bar {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-top: 1px solid var(--border-subtle);
+  padding: 8px 14px;
+  position: relative;
+}
+
+.terminal-input-prompt {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.terminal-input::placeholder {
+  color: var(--text-dim);
+}
+
+/* Command Autocomplete Popover */
+.cli-autocomplete-popover {
+  position: absolute;
+  bottom: 100%;
+  left: 14px;
+  width: 380px;
+  max-height: 220px;
+  background: #ffffff;
+  border: 1px solid var(--border-muted);
+  border-radius: 8px;
+  box-shadow: var(--shadow-elevated);
+  overflow-y: auto;
+  display: none;
+  z-index: 100;
+  font-family: var(--font-mono);
+}
+
+.cli-autocomplete-popover.active {
+  display: block;
+}
+
+.cli-suggestion-item {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 11px;
+}
+
+.cli-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.cli-suggestion-item.selected, .cli-suggestion-item:hover {
+  background: var(--bg-tertiary);
+}
+
+.cli-suggestion-cmd {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.cli-suggestion-desc {
+  color: var(--text-muted);
+  font-size: 10.5px;
+}
+
+/* Keyboard Help Modal Grid */
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+}
+
+.shortcut-desc {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.kbd-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--border-muted);
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: var(--accent-blue);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
